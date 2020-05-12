@@ -11,7 +11,7 @@
  (b) Rename your submission files as Lastname_Firstname.ipynb and Lastname_Firstname.pdf.  
  (c) Correctly select pages for each answer on Gradescope to allow proper grading.
 
-6. **Due date:** Assignments are due Thu, May 20, by 4pm PST.
+6. **Due date:** Assignments are due Thu, May 21, by 4pm PST.
 
 ### Steps to access and complete homework
 - Clone the homework repository
