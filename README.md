@@ -55,13 +55,13 @@
 
 ## 2. Data
 On the ``ieng6.ucsd.edu`` server, the datasets are located at
-- `/datasets/cse152-252-sp20-public/hw2`
+- `/datasets/cse152-252-sp20-public/hw2_data`
 
 To fetch the files you can use commands like `scp` to transfer files from the cluster to your local machine:
 
 From your local machine: 
 
-``scp -r <USERNAME>@dsmlp-login.ucsd.edu:/datasets/home/53/253/cs152sp20ta1/pyviso2/vis {LOCAL PATH}``
+``scp -r <USERNAME>@dsmlp-login.ucsd.edu:/datasets/cse152-252-sp20-public/hw2_data/ {LOCAL PATH}``
 
 Or from within server if your local machine has a fixed address or IP:
 
