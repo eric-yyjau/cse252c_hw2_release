@@ -39,18 +39,12 @@ os.system('cp *.py %s' % opt.experiment )
 if torch.cuda.is_available() and opt.noCuda:
     print("WARNING: You have a CUDA device, so you should probably run with --cuda")
 
-# Initialize image batch
-imBatch = Variable(torch.FloatTensor(opt.batchSize, 3, opt.imHeight, opt.imWidth) )
-targetBatch = Variable(torch.LongTensor(opt.batchSize, 1) )
-
 # Initialize network
 net = faceNet.faceNet(m = opt.marginFactor, feature = False )
 lossLayer = faceNet.CustomLoss()
 
 # Move network and containers to gpu
 if not opt.noCuda:
-    imBatch = imBatch.cuda(opt.gpuId )
-    targetBatch = targetBatch.cuda(opt.gpuId )
     net = net.cuda(opt.gpuId )
 
 # Initialize optimizer
@@ -74,12 +68,14 @@ for epoch in range(0, opt.nepoch ):
 
         # Read data
         image_cpu = dataBatch['img']
-        imBatch.data.resize_(image_cpu.size() )
-        imBatch.data.copy_(image_cpu )
+        imBatch = Variable(image_cpu )
 
         target_cpu = dataBatch['target']
-        targetBatch.data.resize_(target_cpu.size() )
-        targetBatch.data.copy_(target_cpu )
+        targetBatch = Variable(target_cpu )
+
+        if not opt.noCuda:
+            imBatch = imBatch.cuda()
+            targetBatch = targetBatch.cuda()
 
         # Train network
         optimizer.zero_grad()
