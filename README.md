@@ -42,7 +42,7 @@
     - `ssh {USERNAME}@ieng6.ucsd.edu`
 - If you cannot launch a pod, set up the environment following these [instructions](https://docs.google.com/document/d/e/2PACX-1vR-tC1oL6J9RJxSP42iWr8BukgRO9ohcybFXPn95yjQQLvv4iNP5Tlbzx06rQtPA-fLex2N_MVjzgAR/pub?embedded=true)
 - Launch your pod. You should enter a node with 1 GPU
-    - ``launch-scipy-ml.sh -i ucsdets/cse152-252-notebook:latest -g 1``
+    - ``launch-scipy-ml.sh -i ucsdets/cse152-252-notebook:latest -g 1 -p normal``
 - You will be provided with a URL that you can open locally:
     ![](demo_jupyter.png)
     - Click on the link. Then natigate to the jupyter notebook for a question which you are going to git clone as follows
